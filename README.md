@@ -1,2 +1,172 @@
-# For-My-Paris
-For My Paris
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Paris 💖</title>
+
+  <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    /* Card */
+    .card {
+      background: #ffffff;
+      padding: 30px 22px;
+      border-radius: 22px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Text */
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    /* Buttons Container */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Buttons */
+    button {
+      width: 100%;
+      max-width: 260px;
+      padding: 15px;
+      border-radius: 35px;
+      border: none;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    /* Yes Button */
+    .yes {
+      background: #ff4d6d;
+      color: #ffffff;
+    }
+
+    /* No Button */
+    .no {
+      background: #f1f1f1;
+      color: #333;
+      position: relative;
+    }
+
+    /* Message */
+    .message {
+      margin-top: 22px;
+      font-size: 1.15rem;
+      color: #ff4d6d;
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Larger Screens */
+    @media (min-width: 600px) {
+      .buttons {
+        flex-direction: row;
+      }
+
+      button {
+        width: auto;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>My Pretty Girl Paris 💕</h1>
+
+    <p>
+      From laughs we share, to late night talks, to talking about the Word of God,
+      to showing your love for me more and more every day — you’ve become someone
+      really special to me. We have something worth more than silver and gold.
+      Nothing even matters but us.
+    </p>
+
+    <h2>Will you be my girlfriend? 💖</h2>
+
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Yes 💞</button>
+      <button class="no" onmouseover="moveNo()">No 🙃</button>
+    </div>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function sayYes() {
+      const msg = document.getElementById("message");
+      msg.innerText = "You just made me the happiest person ever 🥹💖";
+      msg.style.display = "block";
+    }
+
+    function moveNo() {
+      const noBtn = document.querySelector(".no");
+
+      // Limited movement so it stays visible on mobile
+      const x = Math.random() * 120 - 60;
+      const y = Math.random() * 80 - 40;
+
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+</body>
+</html>
